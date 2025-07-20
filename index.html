@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title> QR GENERATOR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+ 
+<body>
+    
+<div id="navbar"></div>   <!-- This will load the navbar -->
+ 
+  <!-- QR Generator Form -->
+  <div class="main-content">
+    <div class="search-container">
+      <div class="qr-header">
+        <h1>Generate QR Code</h1>
+        <input type="text" placeholder="Type your text or URL" />
+        <label>Select Size:</label>
+        <select>
+          <option>100x100</option>
+          <option>150x150</option>
+          <option>200x200</option>
+        </select>
+      </div>
+      <div class="qr-footer">
+        <button>Generate</button>
+        <button>Download</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    fetch("navbar.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>

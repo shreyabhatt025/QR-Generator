@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar will load here -->
+  <div id="navbar-container"></div>
+
+  <!-- Contact Section -->
+  <main class= "main-content">
+    <h2  style="color: white;">Contact Me - </h2>
+    <p style="color: lightgray"; >Email: <a href="mailto:shreya.yourname@email.com">bhattshreya024@gmail.com    </a></p>
+    <p style="color: lightgray";>Feel free to drop a message regarding collaboration or suggestions!</p>
+  </main>
+
+  <!-- JS to load the navbar -->
+  <script>
+    fetch("navbar.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("navbar-container").innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>

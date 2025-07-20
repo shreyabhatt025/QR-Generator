@@ -1,0 +1,141 @@
+:root {
+  --bcg-color: #001122;
+  --primary-color: #155e75;
+  --secondary-color: #f0f0f0;
+  --border-color: #7fb7c9;
+  --border-radius: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: var(--bcg-color);
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #033747;
+  font-family: calibri;
+  padding: 0 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.navdiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo a {
+  color: white;
+  font-size: 34px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 24px;
+}
+
+.navbar li {
+  list-style: none;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.navbar a:hover {
+  color: #ffd166;
+}
+
+/* Main content center */
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px; /* for fixed navbar */
+  min-height: 100vh;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* QR Generator Box */
+.search-container {
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  padding: 28px 22px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+.qr-header h1 {
+  font-size: 20px;
+  text-align: center;
+  color: var(--secondary-color);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.qr-header input,
+.qr-header select {
+  width: 100%;
+  margin-block: 16px;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  border: 2px solid var(--border-color);
+  font-size: 16px;
+}
+
+.qr-header label {
+  color: var(--secondary-color);
+  font-size: 16px;
+  margin: 6px 0;
+}
+
+.qr-footer {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+}
+
+.qr-footer button {
+  flex: 1;
+  background-color: var(--secondary-color);
+  font-size: 16px;
+  padding: 10px;
+  color: var(--primary-color);
+  font-weight: bold;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background 0.2s;
+  text-align: center;
+}
+
+.qr-footer button:hover {
+  background-color: #ffd166;
+  color: #033747;
+}

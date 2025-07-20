@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <main class= "main-content">
+        <h1 style="color:white;">About QR Generator</h1>
+        <p style="color: lightgray;">This application allows users to generate QR codes from text input. It is designed to be simple and user-friendly.</p>
+        <p style="color: lightgray;">To use the QR generator, simply enter the text you want to encode in the input field and click the submit button. The generated QR code will appear below.</p>
+    </main>
+
+         <script>
+    fetch("navbar.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+      });
+  </script>
+</body>
+</html>
