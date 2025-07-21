@@ -101,7 +101,7 @@ body {
 
 .qr-header input,
 .qr-header select {
-  width: 100%;
+  width: 80%;
   margin-block: 16px;
   padding: 10px;
   border-radius: var(--border-radius);
@@ -138,4 +138,11 @@ body {
 .qr-footer button:hover {
   background-color: #ffd166;
   color: #033747;
+}
+
+.qr-body
+{
+  display:grid;
+  place-item:center;
+  padding:20px;
 }
