@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title> QR GENERATOR</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>QR GENERATOR</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
- 
+
 <body>
-    
-<div id="navbar"></div>   <!-- This will load the navbar -->
- 
+  <!-- Navbar -->
+  <div id="navbar"></div>
+
   <!-- QR Generator Form -->
   <div class="main-content">
     <div class="search-container">
       <div class="qr-header">
         <h1>Generate QR Code</h1>
-        <input type="text" placeholder="Type your text or URL" id="qr-text" >
-        <label> Select Size:</label>
-        <select>
-          <option>100x100</option>
-          <option>150x150</option>
-          <option>200x200</option>
-        </select>
+        <input type="text" placeholder="Type your text or URL" id="qr-text" />
+       <div class="size-selector">
+  <label for="size"> Select Size:</label>
+  <select id="size">
+    <option value="100">100x100</option>
+    <option value="150">150x150</option>
+    <option value="200" selected>200x200</option>
+  </select>
+</div>
+
       </div>
+
+      <div class="qr-body">
+        <div class="qr-container"></div>
+      </div>
+
       <div class="qr-footer">
         <button id="generate">Generate</button>
-        <button id="download"> Download</button>
+        <a id="download" download="QR_Code.png">Download</a>
       </div>
     </div>
   </div>
 
+  <!-- Load navbar -->
   <script>
     fetch("navbar.html")
       .then(res => res.text())
@@ -38,8 +47,9 @@
         document.getElementById("navbar").innerHTML = data;
       });
   </script>
-  <script src="script.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
+  <!-- QRCode.js and custom JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

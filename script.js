@@ -1,35 +1,47 @@
 const qrText = document.getElementById("qr-text");
-const qrSize = document.querySelector("select");
-const generateButton = document.getElementById("generate");
-const downloadButton = document.getElementById("download");
-const qrcontainer = document.querySelector(".qr-container");
+const qrSize = document.getElementById("size");
+const generateBtn = document.getElementById("generate");
+const downloadBtn = document.getElementById("download");
+const qrContainer = document.querySelector(".qr-container");
 
+let size = qrSize.value;
 
-
-let size= qrSize.value;
-generateButton.addEventListener('click', (e) => 
-{
-     e.preventDefault(); // on click in generate button page is refreshing again  so to prevent it we prevent now page will not refresh 
-     generateQRCode();
+// Update size when dropdown changes
+qrSize.addEventListener("change", (e) => {
+  size = e.target.value;
 });
 
-
-qrSize.addEventListener('change', (e) =>
-{
-    size = e.target.value; // when we change the size of QR code it will change the size variable 
-    generateQRCode(); // and generate the QR code again with new size   
-}
-
-function  generateQRcode()
-{   
-    qrContainer.innerHTML=" ";   // the previous QR will clear and the new QR code will generate 
-    new QRCode(qrContainer,{
-            text:qrText.value,
-            height:size,
-            width:size,
-           colorLight:"white",
-           colorDark:"black",
-          
-
+// Generate QR on button click
+generateBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (qrText.value.trim().length === 0) {
+    alert("Please enter some text to generate QR code");
+    return;
+  }
+  generateQRCode();
 });
+
+// Handle download
+downloadBtn.addEventListener("click", () => {
+  const img = document.querySelector(".qr-container img");
+  const canvas = document.querySelector("canvas");
+
+  if (img) {
+    downloadBtn.href = img.src;
+  } else if (canvas) {
+    downloadBtn.href = canvas.toDataURL();
+  }
+});
+
+// Generate the QR Code
+function generateQRCode() {
+  qrContainer.innerHTML = ""; // clear previous QR
+
+  new QRCode(qrContainer, {
+    text: qrText.value,
+    width: parseInt(size),
+    height: parseInt(size),
+    colorDark: "#000000",
+    colorLight: "#ffffff",
+  });
 }
