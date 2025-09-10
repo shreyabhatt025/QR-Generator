@@ -21,7 +21,7 @@ A simple and user-friendly web application that generates QR codes from text or 
 
 ---
 
-## 📁 Project Structure
+## 📁 Project Structure=
 
 QR-Generator/
 ├── index.html          # Main page with QR generation form
